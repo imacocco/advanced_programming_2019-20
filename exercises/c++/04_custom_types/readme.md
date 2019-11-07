@@ -78,7 +78,7 @@ Implement the following external helper functions (i.e., they are not part of th
 
 ## C++14
 
-Modify the class `Vector<typename T>` presented during the lecture exploiting all the of C++14 features you know. Can you see any benefit?
+Modify the class `Vector<typename T>` presented during the lecture exploiting all the of C++14 features you know. Can you see any benefit? AUTO!
 
 *Hints*:
 

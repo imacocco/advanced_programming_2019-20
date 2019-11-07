@@ -9,7 +9,8 @@ int main() {
   float e{23.4}, f{3.34e2};
   char g{'0'}, h{'6'};
 
-  std::cout << dwim<int>(a, b) << '\n'
+  std::cout << dwim<int>(a, b) << '\n'    
+  //when i call the function i can declare the type explicitly (usually the compiler is able to do it)
             << dwim(c, d) << '\n'
             << dwim(e, f) << '\n'
             << dwim(g, h) << std::endl;

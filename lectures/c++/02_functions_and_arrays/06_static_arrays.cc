@@ -13,7 +13,7 @@ int main() {
   af[8] = 3.3;  // last element
   ai[88] = 7;   // undefined behavior, no range checking
 
-  for (std::size_t k{0}; k < 4; ++k)
+  for (std::size_t k{0}; k < 4; ++k)    //size_t: alias for long long unsigned int
     std::cout << "ai[" << k << "] = " << ai[k] << '\n';
 
   std::cout << "\n-------------------------------\n\n";

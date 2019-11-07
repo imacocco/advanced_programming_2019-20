@@ -55,6 +55,7 @@ class Vector {
     elem = std::move(v.elem);
     return *this;
   }
+//   I'm referring to myself, like self in python
 
   // Vector& operator=(Vector&& v) = default; // ok
 
@@ -114,7 +115,7 @@ Vector<T> operator+(const Vector<T>& lhs, const Vector<T>& rhs) {
   for (std::size_t i = 0; i < size; ++i)
     res[i] = lhs[i] + rhs[i];
 
-  return res;
+  return res; // i can only return by value, a pointer would be soon cancelled
 }
 
 template <typename T>
@@ -139,7 +140,7 @@ int main() {
   std::cout << "\nVector<double> v2 = v1; calls\n";
   Vector<double> v2 = v1;
   std::cout << "\nv2 = Vector<double>{7}; calls\n";
-  v2 = Vector<double>{7};
+  v2 = Vector<double>{7};   // Vector<double>{7} will die at the end of the operation -> not a simple copy ctor
   std::cout << "\nVector<double> v3{std::move(v1)}; calls\n";
   Vector<double> v3{std::move(v1)};  // now v1 should not be used
   std::cout << "\nv3 = v2; calls\n";

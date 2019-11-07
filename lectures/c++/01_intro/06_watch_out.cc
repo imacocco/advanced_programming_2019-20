@@ -14,6 +14,9 @@ int main() {
   // for (double d = 0.1; d != 1.0; d += 0.1)
   //   std::cout << d << std::endl;
 
+  // in order to compare two float numbers: take their difference and check whether
+  // the modulus is lower than a threshold
+
   // std::cout << std::setprecision(50);
   // double d = 0;
   // for (int i = 0; i < 10; ++i) {

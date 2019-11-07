@@ -14,7 +14,8 @@ unsigned int factorial(unsigned int n) {
 
 int main() {
   unsigned int f5{factorial(5)};
-  auto f6 = factorial(6);  // use = with auto
+  auto f6 = factorial(6);  // use = with auto   since c++11
+  // the compiler can attribute to f6 the type returned by the function
   std::cout << "factorial of 5 is " << f5 << '\n'
             << "factorial of 6 is " << f6 << std::endl;
 

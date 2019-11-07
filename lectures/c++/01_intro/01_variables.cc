@@ -41,7 +41,7 @@ int main() {
   // narrowing effect
   int var = 6.9; // try to initialize var with the universal and
                  // uniform initialization
-  // int v_narrow {6.9}; // compiler error or warning with variables
+  // int v_narrow {6.9}; // compiler error or warning with variables -> safer!!
   // int v_narrow_w {int(a+b)}; // suppress error/warning with a cast
 
   std::cout << var << "\n";
@@ -77,12 +77,18 @@ int main() {
 
   const int cc{7};
   // cc = 9;			// error
+  // const is a declaration of intent: i promise i won't change the value; if I try to
+  // do it the compiler gives an error
+  // -double check for me
+  // -better implementation for performance (const -> faster)
 
-  constexpr double ce{cc * 8.1234 / M_PI}; // evaluated at compile-time
+  constexpr double ce{cc * 8.1234 / M_PI}; // evaluated at compile-time, not at running time
+  // faster, only from c++11
 
   int ve{int(ce * a)}; // ok create a variable from constexpr
 
   // constexpr int  n_ce {ve*8.1234/M_PI}; // error
+  // not ok to create a variable from one produced with constexpr
 
   // cast to void to suppress warning of unused variable
   (void)ve;

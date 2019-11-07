@@ -30,8 +30,12 @@ int main() {
     std::cout << i << std::endl;
 
   auto pb = &b;  // guess what.. How can I know?
-
+  std::cout<<*pb<<std::endl;
   auto ps = init<double>(11);
+  for (int i = 0; i < 11; ++i)
+  {
+  	std::cout<<ps[i]<<std::endl;
+  }
   delete[] ps;
   return 0;
 }

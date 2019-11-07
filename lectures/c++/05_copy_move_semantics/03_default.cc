@@ -5,6 +5,8 @@ struct X {
   double b;
   char c = 'a';
   X() = default;  // in-class initializers are used by the constructors
+  // this lane is not essential, the compiler would create it on its own
+  // always better to define them explicitly
 };
 
 struct Y {
@@ -12,7 +14,8 @@ struct Y {
   double b;
   char c = 'a';
   Y() : a{5} {}  // what it is written here wins the in-class initialization
-  Y(const Y&) = delete;
+  // do not rememeber the : in this case what are needed for
+  Y(const Y&) = delete; // ???
 };
 
 int main() {
@@ -26,7 +29,7 @@ int main() {
   std::cout << y1.a << "--" << y1.b << "--" << y1.c << "\n";
   std::cout << y2.a << "--" << y2.b << "--" << y2.c << "\n";
 
-  // Y y3{y2}; // error: call to a deleted function
+  // Y y3{y2}; // error: call to a deleted function   ???
 
   return 0;
 }

@@ -2,7 +2,7 @@
 
 int main() {
   double d = 9.9;
-  double &ref = d;
+  double &ref = d;    //alias, ref is equal to d, it is the same variable
   double *ptr = &d;
   std::cout << "value of   d: " << d << std::endl;
   std::cout << "value of ref: " << ref << std::endl;
@@ -17,6 +17,6 @@ int main() {
   ref = 7.7;
   std::cout << "value of   d: " << d << std::endl;
 
-  *ptr = 5.5;
+  *ptr = 5.5; //dereferentiation
   std::cout << "value of   d: " << d << std::endl;
 }

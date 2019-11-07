@@ -15,7 +15,7 @@ void dwim(const color c) {
       std::cout << "option 3: green\n";
       break;
     default:
-      std::cout << "unknown option\n";  // should I exit the program?
+      std::cout << "unknown option\n";  // should I exit the program? -> abort()
       break;
   }
 }
@@ -32,7 +32,7 @@ int main() {
   // dwim(2); // error
   dwim(color(2));  // works but why you may want to write this?
 
-  dwim(color(6));  // ???
+  dwim(color(6));  // ??? -> goes to default option
 
   return 0;
 }

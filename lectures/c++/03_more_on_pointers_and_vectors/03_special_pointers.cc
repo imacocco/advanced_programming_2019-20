@@ -12,8 +12,11 @@ int main() {
   char** ppc;
 
   int* ap[7];
-
+  
+//  int** boh{&pi};
+//  std::cout << a << "\t" << pi << "\t" << *pi << "\t" << boh << "\t" << *boh << "\t" << **boh << std::endl;
   void* pv{pi};
+//  std::cout << pv << "\t" << *pv;
   // *pv; // we cannot dereference void*
   // ++pv; // we cannot increment. Why?
   int* pi2{static_cast<int*>(pv)};

@@ -27,7 +27,7 @@ int main() {
     std::cout << x << " ";
   std::cout << std::endl;
 
-  for (auto& x : a)
+  for (auto& x : a)		//praticamente x diventa un puntatore a interi che cambia indirizzo di memoria a ciascun ciclio
     x *= 10;
 
   for (auto i = 0u; i < a.size(); ++i)
