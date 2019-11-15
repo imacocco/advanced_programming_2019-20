@@ -1,0 +1,5 @@
+-costruttore con make unique
+-"ok" overloading con template per funzioni che prendono lvalues o rvalues
+-cercare di capire come funziona make_unique (forse è tipo new uniqe_ptrt>() ?)
+-copy constructor di List
+

@@ -14,8 +14,7 @@ struct Y {
   double b;
   char c = 'a';
   Y() : a{5} {}  // what it is written here wins the in-class initialization
-  // do not rememeber the : in this case what are needed for
-  Y(const Y&) = delete; // ???
+  Y(const Y&) = delete; // this function is deleted, I cannot perform a copy construction of struct Y
 };
 
 int main() {
@@ -29,7 +28,7 @@ int main() {
   std::cout << y1.a << "--" << y1.b << "--" << y1.c << "\n";
   std::cout << y2.a << "--" << y2.b << "--" << y2.c << "\n";
 
-  // Y y3{y2}; // error: call to a deleted function   ???
+  // Y y3{y2}; // error: call to a deleted function
 
   return 0;
 }

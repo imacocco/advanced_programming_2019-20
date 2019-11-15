@@ -18,7 +18,7 @@ class Vector {
 
   std::size_t size() const { return _size; }
 
-  // range-for loop, since c++11
+// range-for loop, since c++11
   const T* begin() const { return elem; }
   T* begin() { return elem; }
 

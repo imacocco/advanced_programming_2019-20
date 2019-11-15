@@ -3,8 +3,8 @@
 
 #include "ap_error.h"
 
-
 //  just printing when they are constructed and destructed
+
 class Foo {
  public:
   Foo() { std::cout << "Foo" << std::endl; }

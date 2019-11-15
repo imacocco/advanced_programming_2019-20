@@ -68,7 +68,7 @@
  * If a condition must be always checked (i.e., also when the code is
  * compiled in release mode), use the AP_ERROR interface
  *
- * AP_ERROR(condition);  // throws an std::rutime_erorr
+ * AP_ERROR(condition);  // throws an std::rutime_error
  *
  * AP_ERROR(condition) << "optional" << " message"
  *    << std::endl;
@@ -159,11 +159,17 @@ namespace internal {
 // trick to simulate the overloading of macro AP_ASSERT depending on the number
 // of arguments
 #define SELECT_MACRO(_1, _2, NAME, ...) NAME
+//SELECT_MACRO just gives back the third argument obtained
 
 // when the condition is not satisfied, an exception is thrown
 
 #define AP_ERROR(...)                                                          \
   SELECT_MACRO(__VA_ARGS__, _AP_ERROR2, _AP_ERROR1, dummy)(__VA_ARGS__)
+//__VA_ARGS__ are the arguments of AP_ERROR; if there is only 1, _2 of SELECT_MACRO
+//is _AP_ERROR2 and NAME is _AP_ERROR1, with arguments __VA_ARGS__
+//If AP_ERROR is called with two arguments, _1 and _2 are taken by __VA_ARGS__
+//and NAME is then _AP_ERROR2, which is called with those two arguments
+
 
 #define _AP_ERROR2(cond, exception_type)                                       \
   if (!(cond))                                                                 \

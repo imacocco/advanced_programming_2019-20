@@ -1,5 +1,5 @@
 CXX = c++
-CXXFLAGS = -Wall -Wextra -g -std=c++14 -Wno-unused-parameter
+CXXFLAGS = -Wall -Wextra -g -std=c++14 -Wno-unused-parameter -I ../../../lectures/c++/06_error_handling/
 
 SRC = 01_list.cc            \
 #      02_vector.cc           \
